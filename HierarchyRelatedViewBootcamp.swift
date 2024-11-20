@@ -35,33 +35,7 @@ struct HierarchyRelatedViewBootcamp: View {
             NavigationView {
                 VStack {
                         NavigationLink(destination: ControlViewBootcamp()) {
-                            HStack {
-                                Image(systemName: "globe")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .cornerRadius(15)
-                                    .shadow(radius: 10)
-                                
-                                VStack(alignment: .leading) {
-                                    Text("独立开发指南")
-                                        .font(.title2)
-                                        .bold()
-                                        .padding(.bottom, 5)
-                                    
-                                    Text("让你的创作变现变得更简单！")
-                                        .font(.body)
-                                        .foregroundColor(.gray)
-                                    
-                                    HStack {
-                                        Spacer()
-                                        Image(systemName: "arrowshape.turn.up.right")
-                                            .font(.system(size: 16, weight: .bold))
-                                    }
-                                }
-                                .padding(.leading)
-                            }
-                            .frame(maxHeight: 120)
-                            .cardStyle()
+                            CardView
                         }
                 }
                 .navigationTitle("项目列表")
@@ -138,6 +112,42 @@ struct HierarchyRelatedViewBootcamp: View {
             }
             
         }
+    }
+}
+
+var CardView: some View {
+    VStack {
+        VStack(spacing: 30) {
+            HStack {
+                Image(systemName: "globe")
+                    .font(.largeTitle)
+                    .imageScale(.large)
+                    .aspectRatio(contentMode: .fit)
+                    .cornerRadius(15)
+                    .shadow(radius: 10)
+                
+                VStack(alignment: .leading) {
+                    Text("独立开发指南")
+                        .font(.title2)
+                        .bold()
+                        .padding(.bottom, 5)
+                    
+                    Text("让你的创作变现变得更简单！")
+                        .font(.body)
+                        .foregroundColor(.gray)
+                    
+                    HStack {
+                        Spacer()
+                        Image(systemName: "arrowshape.turn.up.right")
+                            .font(.system(size: 16, weight: .bold))
+                    }
+                }
+                .padding(.leading)
+            }
+            .frame(maxHeight: 120)
+            .cardStyle()
+        }
+        
     }
 }
 
